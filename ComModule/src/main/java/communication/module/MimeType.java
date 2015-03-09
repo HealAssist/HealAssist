@@ -1,7 +1,7 @@
 package communication.module;
 
 //Enumeration to hold type information related to data objects
-public enum MimeType{				
+public enum MimeType implements IDatumType {				
 	BINARY(".bin"), JSON(".json");
 			
 	private String extension;

@@ -9,11 +9,10 @@ public class EMRSimRouter implements IRouter {
 	
 //	public static void main(String[] args){
 //		//Read in json object from file
-//		IFileObject jObj = (JsonFileObj)GetData("C:/1-dev/1-mock-data/data.json");							
+//		IDatum jObj = (JsonDatum)GetData("C:/1-dev/1-mock-data/data.json");							
 //		
 //		//Test code *** Output result			
-//		System.out.println(jObj.GetData().toString() + "\n");
-//		System.out.println(jObj.GetMimeType().GetExtension());
+//		System.out.println(jObj.GetData().toString() + "\n");		
 //	}
 	
 	
@@ -23,21 +22,20 @@ public class EMRSimRouter implements IRouter {
 		try{
 			JsonReader rdr = Json.createReader(new FileReader(uri));				
 			return rdr.readObject();			
-		}catch(Exception EMRSim_ConJsonArray){
-			System.out.println(EMRSim_ConJsonArray);			
+		}catch(Exception EMRSim_ConstructJsonArray){
+			System.out.println(EMRSim_ConstructJsonArray);			
 		}
 		return null;
 	}
-
-
 	
-	public IFileObject GetData(String url) {
+	public IDatum GetData(String url) {
 		try{
 			JsonObject jObj = ConstructJsonObject(url);					
 			if(jObj.size() >= 1){
 				//Each object must be packaged in JsonFileObject
-				JsonFileObj datum = new JsonFileObj(jObj);
-				return datum;
+				JsonBinder jBinder = new JsonBinder();
+				JsonDatum jDatum = (JsonDatum)jBinder.BindData(jObj);
+				return jDatum;
 			}						
 		}catch(Exception EMRSim_GetData){
 			System.out.println(EMRSim_GetData);			

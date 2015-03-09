@@ -1,5 +1,5 @@
 package communication.module;
 
 public interface IRouter {
-	public IFileObject GetData(String restURL);
+	public IDatum GetData(String restURL);
 }

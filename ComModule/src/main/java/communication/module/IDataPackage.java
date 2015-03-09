@@ -5,5 +5,5 @@ public interface IDataPackage {
 	// IN: Data object.
 	//OUT: True = Storage successful, False = storage unsuccessful
 	public boolean StoreData();
-	public IFileObject GetData();
+	public IDatum GetData();
 }
