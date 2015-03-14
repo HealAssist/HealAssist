@@ -1,36 +1,26 @@
 package communication.module;
 
-import java.io.FileReader;
 import javax.json.*;
 
 //Router to read json file from file system
 //Module output: JSON objects as strings
 public class EMRSimRouter implements IRouter {
+
+	private IDatum _datum;
 	
-//	public static void main(String[] args){
-//		//Read in json object from file
-//		IDatum jObj = (JsonDatum)GetData("C:/1-dev/1-mock-data/data.json");							
-//		
-//		//Test code *** Output result			
-//		System.out.println(jObj.GetData().toString() + "\n");		
-//	}
-	
-	
-	// In: URI of file in filesystem.
-	//Out: JsonArray from file, or null.
-	private JsonObject ConstructJsonObject(String uri){
-		try{
-			JsonReader rdr = Json.createReader(new FileReader(uri));				
-			return rdr.readObject();			
-		}catch(Exception EMRSim_ConstructJsonArray){
-			System.out.println(EMRSim_ConstructJsonArray);			
-		}
-		return null;
+	public EMRSimRouter(){
+		this._datum = null;
+	}	
+	public EMRSimRouter(IDatum initDatum){
+		this._datum = initDatum;
 	}
 	
+	// In: URI of file in filesystem.
+	//Out: JsonArray from file, or null.	
 	public IDatum GetData(String url) {
 		try{
-			JsonObject jObj = ConstructJsonObject(url);					
+			JsonHelper jHelper = new JsonHelper();								
+			JsonObject jObj = jHelper.ConstructJsonObject(url);					
 			if(jObj.size() >= 1){
 				//Each object must be packaged in JsonFileObject
 				JsonBinder jBinder = new JsonBinder();
