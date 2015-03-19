@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.healAssist.connection.DBConnection;
-import com.healAssist.beans.LoginDetails;
 import com.healAssist.beans.UserDetails;
 
 /**
@@ -59,7 +58,7 @@ public class GetRegister extends HttpServlet {
 		response.setContentType("text/html");
 
 	      // New location to be redirected
-	      String site = new String("http://localhost:8081/healAssist/hospital_project/files/pages/login_soft.html");
+	      String site = new String("http://localhost:8090/healAssist/hospital_project/files/pages/login_soft.html");
 
 	      response.setStatus(response.SC_MOVED_PERMANENTLY);
 	      response.setHeader("Location", site);    
