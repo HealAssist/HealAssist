@@ -1,0 +1,15 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>healassist</groupId>
+  <artifactId>server.external.communication</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>communication.module</name>
+  <description>Used on HealAssist server-side for communication with REST APIs.</description>
+  <dependencies>
+  	<dependency>
+  		<groupId>healassist</groupId>
+  		<artifactId>server.signaling</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+</project>
