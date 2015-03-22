@@ -1,0 +1,18 @@
+INDEX VERSION 1.126+C:\1-dev\1-ver-con\git-hub\HealAssist\.metadata\.plugins\org.eclipse.jdt.core
+4137686754.index
+3340556164.index
+3443935821.index
+1894779779.index
+47350646.index
+670420798.index
+3074824090.index
+1957547203.index
+3326454230.index
+1909940158.index
+1304205406.index
+1787228143.index
+3266009012.index
+3054798737.index
+1375396582.index
+1628402795.index
+2010341584.index
