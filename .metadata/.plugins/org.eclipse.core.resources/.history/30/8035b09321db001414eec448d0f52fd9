@@ -1,0 +1,6 @@
+package database.access.facade;
+
+public class DBFacade {
+	static final String dbConn = "jdbc:oracle:thin:@localhost:1521:healassistDB";
+	
+}

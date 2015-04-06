@@ -1,0 +1,20 @@
+package database.access.facade;
+
+import java.sql.Connection;
+
+import database.access.dataobject.AbstractTable;
+
+public class DatabaseInterface {
+	public Boolean insert(AbstractTable table){
+		try(Connection conn = openConnection();){ //Do try with resources to open connection
+			if(table instanceof AbstractTable){
+				return true;
+			}else{
+				return false;
+			}
+		}catch(Exception e){
+			System.out.println(e);
+			return null;
+		}
+	}
+}

@@ -1,0 +1,23 @@
+package database.access.tableobject;
+
+public enum PhysicianInfoTableEnum {
+	TABLE_NAME("USER_INFO"),
+	//USER_ID("USER_ID"),
+	USERNAME("USER_NAME"),
+	PASSWORD("USER_PASSWORD"),
+	FIRSTNAME("USER_FNAME"),
+	LASTNAME("USER_LNAME"),
+	EMAIL("USER_EMAIL"),
+	STREET_NUM("USER_STREET_NUM")
+	;
+	
+	PhysicianInfoTableEnum(String newStringRepresentation){
+		this.stringRepresentation = newStringRepresentation;
+	}
+	
+	public String asText(){
+		return this.stringRepresentation;
+	}
+	
+	private String stringRepresentation;	
+}

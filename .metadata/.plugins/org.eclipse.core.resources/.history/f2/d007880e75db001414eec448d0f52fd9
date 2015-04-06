@@ -1,0 +1,18 @@
+package database.access.dataobject;
+
+public enum UserInfoEnum extends TableAttrEnum {
+	TABLE_NAME("USER_DETAILS"),
+	USER_ID("USER_ID"),
+	USERNAME("USER_NAME"),
+	PASSWORD("USER_PASSWORD");
+	
+	UserInfoEnum(String newStringRepresentation){
+		this.stringRepresentation = newStringRepresentation;
+	}
+	
+	public String asText(){
+		return this.stringRepresentation;
+	}
+	
+	private String stringRepresentation;	
+}

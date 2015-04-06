@@ -1,0 +1,38 @@
+package database.access.facade;
+
+import java.sql.PreparedStatement;
+import java.util.HashMap;
+import java.util.Iterator;
+
+import database.access.dataobject.AbstractTable;
+
+public class QueryBuilder {
+	public static String constructInsert(DatabaseTable table){
+		try{
+			String tableName = table.getTableName();				
+			String[] attrList = (String[]) table.getAttributeMap().keySet().toArray();
+			HashMap<String, String> attrCollection = table.getAttributeMap();			
+			String statement = 
+					"INSERT INTO " + tableName; 											
+					
+			// *** modify for non-string values (vals that don't need ' ', 
+			// i.e, (fName, lName) Values ('John', 'Doe') vs ('String', 1)			
+			String attrNames = " ( ";
+			String attrValues = " ( ";
+			attrNames += attrList[0];
+			attrValues += attrCollection.get( attrList[0] );
+			for(String attribute: attrList){
+				attrNames += ", " + attribute;
+				attrValues += ", " + attrCollection.get(attribute);				
+			}
+			attrNames += " ) ";
+			attrValues += " ) ";
+			
+			statement+= attrNames + " VALUES " + attrValues; // *** Ensure ; isn't needed @ stmt end
+			return statement;			
+		}catch(Exception e){
+			System.out.println(e.toString());
+			return null;
+		}
+	}
+}

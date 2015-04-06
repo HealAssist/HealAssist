@@ -1,0 +1,23 @@
+package database.access.dataobject;
+
+import java.util.HashMap;
+
+public abstract class AbstractTable {
+	private String tableName;
+	private HashMap<String, String> attributeList;	
+	
+	public HashMap<String, String> getAttributeMap(){
+		return this.attributeList;
+	}
+	protected void addAttribute(String attrKey, String attrValue){
+		this.attributeList.put(attrKey, attrValue);
+	}
+	
+	public String getTableName(){
+		return this.tableName;
+	}
+	protected void setTableName(String tableName){
+		this.tableName = 
+	}
+	
+}

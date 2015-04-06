@@ -1,0 +1,52 @@
+package healassist.service.response;
+
+import java.util.HashMap;
+
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.json.JsonObjectBuilder;
+import javax.json.JsonValue;
+
+import org.json.JSONObject;
+
+public class JsonFeedbackResponse {
+	private static final String WAS_SUCCESS = "wasSuccess";	
+	private static final String SERVER_ERROR = "server-error";
+	
+	public static String success(){
+		HashMap<String, Boolean> jsonDict = new HashMap<String, Boolean>();
+		jsonDict.put(WAS_SUCCESS, true);
+		return (JsonHelper.buildJson(jsonDict)).toString();
+	}
+	
+	public static String failure(){		
+		HashMap<String, Boolean> jsonDict = new HashMap<String, Boolean>();
+		jsonDict.put(WAS_SUCCESS, false);
+		return (JsonHelper.buildJson(jsonDict)).toString();
+	}	
+	
+	public static String error(String projectName, String className,
+			String functionName, String errorCause){
+		return (buildJson(SERVER_ERROR, 
+				serverErrorMessage(projectName, className, functionName, errorCause) 
+				)).toString();
+	}
+	
+	public static String serverErrorMessage(String projectName, String className,
+			String functionName, String errorCause){
+		return  projectName + "." + className + " -> " + "function " + 
+			functionName + " -> " + errorCause + ".";
+	}
+	
+//	private static JSONObject add(String key, JsonValue value){
+//		return Json.createObjectBuilder().add(key, value);
+//	}
+//	
+//	private static JsonObjectBuilder add(String key, String value){
+//		return Json.createObjectBuilder().add(key, value);
+//	}
+//	
+//	private static JsonObject buildJson(){
+//		
+//	}
+}

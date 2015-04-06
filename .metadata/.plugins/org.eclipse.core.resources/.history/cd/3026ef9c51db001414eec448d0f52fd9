@@ -1,0 +1,28 @@
+package database.access.facade;
+
+import java.sql.PreparedStatement;
+import java.util.HashMap;
+
+import database.access.dataobject.AbstractTable;
+
+public class QueryBuilder {
+	public static String constructInsert(AbstractTable table){
+		try{
+			String tableName = table.getTableName();
+			String attributeNames = "", attributeValues = "";			
+			String[] attrList = (String[]) table.getAttributeMap().keySet().toArray();
+			HashMap<String, String> dict = table.getAttributeMap();
+
+			String insert_statement = 
+					"INSERT INTO " + tableName + " ( "; 											
+					
+			for(String attribute : attrList ){
+				table.
+			}
+			//Use loop here to construct query. Only use one loop!
+			//Construct both attributes and value list in at one time
+		}catch(Exception e){
+			
+		}
+	}
+}

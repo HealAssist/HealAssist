@@ -1,0 +1,13 @@
+package database.access.dataobject;
+
+public enum UserInfoEnum {
+	USER_ID("user_id"),
+	USERNAME("user_name"),
+	PASSWORD("user_password");
+	
+	UserInfoEnum(String newStringRepresentation){
+		this.stringRepresentation = newStringRepresentation;
+	}
+	
+	private String stringRepresentation;
+}

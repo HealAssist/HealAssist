@@ -1,0 +1,13 @@
+package database.access.dataobject;
+
+public enum TableAttrEnum {
+	TableAttrEnum(){
+		this.stringRepresentation = "";		
+	}
+	
+	protected String asText(){
+		return this.stringRepresentation;
+	}
+	
+	private String stringRepresentation;	
+}

@@ -1,0 +1,29 @@
+package healassist.service.response;
+
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.json.JsonValue;
+
+public class JsonFeedbackResponse {
+	private static final String WAS_SUCCESS = "wasSuccess";	
+	
+	public static String success(){
+		JsonObject job = Json.createObjectBuilder().add(WAS_SUCCESS, JsonValue.TRUE).build();
+		return job.toString();
+	}
+	
+	public static String failure(){
+		JsonObject job = Json.createObjectBuilder().add(WAS_SUCCESS, JsonValue.FALSE).build();
+		return job.toString();
+	}
+	
+	public static
+	
+	private JsonObject BuildJson(String key, String value){
+		return Json.createObjectBuilder().add(key, value).build();		
+	}
+	
+	private JsonObject BuildJson(String key, JsonValue value){
+		return Json.createObjectBuilder().add(key, value).build();
+	}
+}

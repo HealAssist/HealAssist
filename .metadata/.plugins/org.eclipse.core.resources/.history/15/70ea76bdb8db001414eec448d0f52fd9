@@ -1,0 +1,16 @@
+package database.access.dataobject;
+
+public class UserInfo extends DatabaseTable {			
+	public UserInfo(){
+		super();
+		this.setTableName(UserInfoEnum.TABLE_NAME.asText());
+	}	
+	
+	public void addUsername(String newUsername){ // *** Create abstraction for all objects (i.e, UserId)?	
+		this.addAttribute(UserInfoEnum.USERNAME.asText(), newUsername);		
+	}
+	
+	public void addPassword(String newUserPassword){		
+		this.addAttribute(UserInfoEnum.PASSWORD.asText(), newUserPassword);
+	}
+}

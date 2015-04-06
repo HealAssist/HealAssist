@@ -1,0 +1,11 @@
+package database.access.dataobject;
+
+public enum TableAttrEnum {
+	
+	public String asText(){
+		return this.stringRepresentation;
+	}
+	
+	private String stringRepresentation;
+	private String queryText;
+}

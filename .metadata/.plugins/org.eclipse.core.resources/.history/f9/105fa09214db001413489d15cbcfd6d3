@@ -1,0 +1,10 @@
+package database.access.facade;
+
+import database.access.dataobject.AbstractTable;
+
+public class DatabaseInterface {
+	public Boolean insert(AbstractTable table){
+		return null;
+		
+	}
+}

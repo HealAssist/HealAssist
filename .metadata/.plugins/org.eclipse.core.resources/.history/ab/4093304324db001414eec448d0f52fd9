@@ -1,0 +1,6 @@
+package database.access.dataobject;
+
+public abstract class AbstractTable {
+	protected String tableName;
+	protected String[] attributeList;	
+}

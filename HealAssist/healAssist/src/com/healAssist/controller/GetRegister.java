@@ -22,7 +22,10 @@ public class GetRegister extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Get");
+		response.setContentType("text/html");;
+		PrintWriter out = response.getWriter();
+		out.append("Accessed GET!");
+		out.close();
 	}
 	
 	protected void doPost(HttpServletRequest request,

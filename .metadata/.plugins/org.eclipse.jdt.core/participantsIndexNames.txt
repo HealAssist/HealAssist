@@ -1,0 +1,11 @@
+INDEX VERSION 1.126
+C:\1-dev\1-ver-con\git-hub\HealAssist\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\330245008.index
+\healAssist\src
+C:\1-dev\1-ver-con\git-hub\HealAssist\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\257901091.index
+\webapp.test\src\main\resources
+C:\1-dev\1-ver-con\git-hub\HealAssist\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3756574017.index
+\client.service\src\main\java
+C:\1-dev\1-ver-con\git-hub\HealAssist\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\259948815.index
+\healassist.client.service\src\main\java
+C:\1-dev\1-ver-con\git-hub\HealAssist\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4083618147.index
+\healAssist\src

@@ -1,0 +1,22 @@
+package database.access.tableobject;
+
+public enum UserInfoTableEnum {
+	TABLE_NAME("USER_DETAILS"),
+	USER_ID("USER_ID"),
+	USERNAME("USER_NAME"),
+	PASSWORD("USER_PASSWORD"),
+	FIRSTNAME("USER_FNAME"),
+	LASTNAME("USER_LNAME"),
+	EMAIL("USER_EMAIL"),
+	STREET_NUM("USER_STREET_NUM");
+	
+	UserInfoTableEnum(String newStringRepresentation){
+		this.stringRepresentation = newStringRepresentation;
+	}
+	
+	public String asText(){
+		return this.stringRepresentation;
+	}
+	
+	private String stringRepresentation;	
+}

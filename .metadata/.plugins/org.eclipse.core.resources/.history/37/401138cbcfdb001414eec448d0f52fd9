@@ -1,0 +1,45 @@
+package healassist.service.response;
+
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.json.JsonObjectBuilder;
+import javax.json.JsonValue;
+
+public class JsonFeedbackResponse {
+	private static final String WAS_SUCCESS = "wasSuccess";	
+	private static final String ERROR = "error";
+	
+	public static String success(){
+		return (buildJson(WAS_SUCCESS, JsonValue.TRUE)).toString();
+	}
+	
+	public static String failure(){		
+		return (buildJson(WAS_SUCCESS, JsonValue.FALSE)).toString();
+	}	
+	
+	public static String error(String projectName, String className,
+			String functionName, String errorCause){
+		return (BuildJson(ERROR, 
+				serverErrorMessage(projectName, className, functionName, errorCause) 
+				)).toString();
+	}
+	
+	public static String serverErrorMessage(String projectName, String className,
+			String functionName, String errorCause){
+		return "server-error: " + projectName + "." + 
+			className + " -> " + "function " + functionName + " -> " +
+				errorCause + ".";
+	}
+	
+	private static JsonObjectBuilder add(String key, JsonValue value){
+		return Json.createObjectBuilder().add(key, value);
+	}
+	
+	private static JsonObjectBuilder add(String key, String value){
+		return Json.createObjectBuilder().add(key, value);
+	}
+	
+	private static JsonObject buildJson(){
+		
+	}
+}

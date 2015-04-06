@@ -1,0 +1,19 @@
+package database.access.tableobject;
+
+public class UserInfoTable extends DatabaseTable {			
+	public UserInfoTable(){
+		super();
+		this.setTableName(UserInfoTableEnum.TABLE_NAME.asText());
+	}	
+	
+	public void addUsername(String newUsername){ // *** Create abstraction for all objects (i.e, UserId)?
+		String formStrUsername = this.formatStringAttr(newUsername);
+		this.addAttribute(UserInfoTableEnum.USERNAME.asText(), formStrUsername);		
+	}
+	
+	public void addPassword(String newUserPassword){		
+		String formStrPassword = this.formatStringAttr(newUserPassword);
+		this.addAttribute(UserInfoTableEnum.PASSWORD.asText(), formStrPassword);
+	}
+	
+}

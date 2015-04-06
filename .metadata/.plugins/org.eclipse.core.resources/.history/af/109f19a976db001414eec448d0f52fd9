@@ -1,0 +1,50 @@
+package com.healassist.server.healassist.client.service;
+
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.json.JsonValue;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+
+import database.access.dataobject.UserInfo;
+import database.access.facade.DatabaseInterface;
+
+@Path("/register-user")
+public class RegisterUser {
+	@GET
+	@Path("")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String registerUser(@QueryParam("username") String username, 
+			@QueryParam("password") String password, @QueryParam("fname") String fname,
+			@QueryParam("lname") String lname, @QueryParam("email") String email, 
+			@QueryParam("streetnum") int streetnum, @QueryParam("streetname") String streetname,
+			@QueryParam("city") String city, @QueryParam("state") String state, 
+			@QueryParam("zipcode") int zipcode){
+		JsonObject jResult;
+		JsonValue isSuccess = JsonValue.FALSE;
+		try{						
+			UserInfo user = new UserInfo();
+			
+			user.addUsername(username);
+			user.addPassword(password);
+			
+			DatabaseInterface db = new DatabaseInterface();
+			if(db.insert(user)){
+				isSuccess = JsonValue.TRUE;
+			}			
+			jResult = 
+					Json.createObjectBuilder().add("success", isSuccess).build();
+			return jResult.toString();
+		}catch(Exception e){
+			System.err.println(e);
+			jResult = 
+					Json.createObjectBuilder().add("success", isSuccess).build();
+			return jResult.toString();
+		}
+	}
+	
+	
+}
