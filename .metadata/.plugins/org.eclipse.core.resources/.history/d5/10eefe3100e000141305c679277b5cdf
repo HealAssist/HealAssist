@@ -1,0 +1,21 @@
+package database.access.query;
+
+import database.access.tableobject.DatabaseTable;
+
+public class SelectQuery extends QueryObject {		
+	
+	public SelectQuery(){ 
+		super();		
+	}
+	public SelectQuery(DatabaseTable table){
+		super();	
+	}				
+	
+	public void Select(String...columns){
+		if(columns.length <= 0){
+			this.addQueryPair(QueryConstant.SELECT, "");
+		}else{
+			
+		}
+	}
+}

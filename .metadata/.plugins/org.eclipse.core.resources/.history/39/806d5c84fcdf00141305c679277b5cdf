@@ -1,0 +1,13 @@
+package database.access.query;
+
+public class SelectQuery extends QueryObject {
+	private String queryString;
+	public SelectQuery(){ 
+		super();
+		this.queryString = "";
+	}
+
+	public void Select(String...columns){
+		
+	}
+}

@@ -1,0 +1,19 @@
+package database.access.tableobject;
+
+public enum PatMedicationsEnum {
+	TABLE_NAME("PAT_MEDICATIONS"),
+	PATIENT_MED_ID("PAT_MED_ID"),
+	PATIENT_CHART_ID("PAT_CHART_ID"),
+	MEDICATION_NAME("MED_NAME"),
+	MEDICATION_DOSAGE_QTTY("MED_DOSAGE_QTTY")
+	;			
+	public String toString(){
+		return this.stringRepresentation;
+	}	
+	PatMedicationsEnum(String newStringRepresentation){
+		this.stringRepresentation = newStringRepresentation;
+	}
+	
+	private String stringRepresentation;		
+
+}

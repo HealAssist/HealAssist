@@ -1,7 +1,0 @@
-package database.access.dataobject;
-
-import java.util.HashMap;
-
-public abstract class AbstractTable {
-	protected HashMap<String, String> attributeList;	
-}

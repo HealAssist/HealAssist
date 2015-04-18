@@ -1,0 +1,16 @@
+package database.access.tableobject;
+
+public enum PatDemographicsEnum {
+	TABLE_NAME("PAT_DEMOGRAPHICS"),
+	CHART_ID("PAT_CHART_ID"),
+	
+	;			
+	public String toString(){
+		return this.stringRepresentation;
+	}	
+	PatDemographicsEnum(String newStringRepresentation){
+		this.stringRepresentation = newStringRepresentation;
+	}
+	
+	private String stringRepresentation;
+}

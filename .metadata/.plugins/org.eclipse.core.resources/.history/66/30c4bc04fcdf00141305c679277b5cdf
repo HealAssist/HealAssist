@@ -1,0 +1,8 @@
+package database.access.query;
+
+import database.access.query.QueryConstant;
+
+public class SelectQuery extends QueryObject {	
+	public SelectQuery(){		
+	}
+}

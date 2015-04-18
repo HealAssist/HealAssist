@@ -1,0 +1,30 @@
+package database.access.query;
+
+import com.google.common.base.Joiner;
+
+public class SelectClause extends DatabaseClause{
+	private String selectClause;	
+	
+	public SelectClause(){
+		super();
+		init();
+	}
+	public SelectClause(String[] columns){		
+		super();
+		init();
+		
+	}
+	private void init(){
+		this.selectClause = "";
+	}
+	
+	public void setSelectClause(String newClause){
+		this.selectClause = newClause;
+	}
+	public String getColumns(){
+		return this.selectClause;
+	}
+	private String columnsToString(String[] columns, char delimiter){
+		return Joiner.on(delimiter).join(columns);
+	}
+}

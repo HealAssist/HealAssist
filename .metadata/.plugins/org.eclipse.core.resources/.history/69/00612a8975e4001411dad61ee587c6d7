@@ -1,0 +1,21 @@
+package healassist.entity;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+
+@Path("/physician")
+public class Physician {
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public String getPhysician(@QueryParam("id") String id){
+		try{
+			return "In get physician";
+		}catch(Exception e){
+			System.err.println(e);
+			return null;
+		}
+	}
+}

@@ -1,0 +1,7 @@
+127.0.0.1 - - [06/Apr/2015:01:15:36 -0500] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [06/Apr/2015:01:15:38 -0500] "GET /healassist.client.service/ HTTP/1.1" 404 967
+127.0.0.1 - - [06/Apr/2015:01:15:55 -0500] "GET /healassist.client.service/register-user/physician?username=feochen&password=feochen&firstname=Feo&lastname=Chen&email=chenf@email.com&middlename=J HTTP/1.1" 200 55
+127.0.0.1 - - [06/Apr/2015:01:17:32 -0500] "GET /healassist.client.service/register-user/physician?username=jennifer1&password=jennifer1&firstname=Jennifer&middlename=J&lastname=Peols&email=jennyp@email.com HTTP/1.1" 200 21
+127.0.0.1 - - [06/Apr/2015:01:19:29 -0500] "GET /healassist.client.service/register-user/physician?username=docmaster&password=docmaster&firstname=Ryan&middlename=F&lastname=Feorse&email=ryman@sbcglobal.net HTTP/1.1" 200 21
+127.0.0.1 - - [06/Apr/2015:01:19:32 -0500] "GET /healassist.client.service/register-user/physician?username=docmaster&password=docmaster&firstname=Ryan&middlename=F&lastname=Feorse&email=ryman@sbcglobal.net HTTP/1.1" 200 55
+127.0.0.1 - - [06/Apr/2015:01:20:57 -0500] "GET /healassist.client.service/register-user/physician?username=docmaster1&password=docmaster1&firstname=Kelly&middlename=G&lastname=Muhammad&email=kellymu@gmail.net HTTP/1.1" 200 21

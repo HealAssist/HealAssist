@@ -1,0 +1,5 @@
+package database.access.tableobject;
+
+public enum OfficesEnum {
+
+}

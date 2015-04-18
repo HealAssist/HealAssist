@@ -1,0 +1,25 @@
+package database.access.query;
+
+public class SelectClause extends DatabaseClause{
+	private String[] columns;	
+	
+	public SelectClause(){
+		super();
+		init();
+	}
+	public SelectClause(String...columns){
+		super();
+		init();
+		setColumns(columns);
+	}
+	private void init(){
+		this.columns = null;
+	}
+	
+	private void setColumns(String...newColumns){
+		this.columns = newColumns;
+	}
+	public String[] getColumns(){
+		return this.columns;
+	}
+}

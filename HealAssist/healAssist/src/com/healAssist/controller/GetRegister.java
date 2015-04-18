@@ -25,7 +25,7 @@ public class GetRegister extends HttpServlet {
 		response.setContentType("text/html");;
 		PrintWriter out = response.getWriter();
 		out.append("Accessed GET!");
-		out.close();
+		out.flush();
 	}
 	
 	protected void doPost(HttpServletRequest request,

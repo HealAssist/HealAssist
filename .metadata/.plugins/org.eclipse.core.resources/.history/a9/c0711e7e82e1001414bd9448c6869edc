@@ -1,0 +1,43 @@
+package database.access.facade;
+
+import java.sql.ResultSet;
+
+import database.access.tableobject.PatientInfoTable;
+import database.access.tableobject.PhysicianInfoTable;
+
+public interface IBusinessLogic {
+	//Physician options
+	public Boolean authenticate(PhysicianInfoTable physUser);
+	public Boolean register(PhysicianInfoTable physician);
+	public Boolean register(PatientInfoTable patient);
+	
+	public Boolean createPatient(PatientInfoTable patient);
+	public ResultSet readPatient();
+	public Boolean updatePatient();
+	public Boolean deletePatient();
+	
+	public Boolean createPatientMedication();
+	public ResultSet readPatientMedication();
+	public Boolean updatePatientMedication();
+	public Boolean deletePatientMedication();
+	
+	public Boolean createAppointment();
+	public ResultSet readAppointment();
+	public Boolean updateAppointment();
+	public Boolean deleteAppointment();
+	
+	public Boolean createPhoneNumber();
+	public ResultSet readPhoneNumber();
+	public Boolean updatePhoneNumber();
+	public Boolean deletePhoneNumber();
+	
+	
+	
+	public Boolean createOffice();
+	public ResultSet readOffice();
+	public Boolean updateOffice();
+	public Boolean deleteOffice();
+	
+	//Patient options
+	//public Boolean authenticate(PatientInfoTable patUser);
+}

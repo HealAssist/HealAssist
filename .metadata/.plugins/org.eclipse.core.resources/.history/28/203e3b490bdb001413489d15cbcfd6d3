@@ -1,5 +1,0 @@
-package database.access.dataobject;
-
-public enum UserInfoEnum {
-	
-}

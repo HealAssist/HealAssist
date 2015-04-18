@@ -1,0 +1,19 @@
+package database.access.tableobject;
+
+public class MedicalSpecialtiesTable extends DatabaseTable {
+	public static final String TABLE_NAME = OfficesEnum.TABLE_NAME.toString();
+	public static final String OFFICE_ID = OfficesEnum.OFFICE_ID.toString();
+	public static final String NAME = OfficesEnum.NAME.toString();
+	public static final String ADDRESS_ID = OfficesEnum.ADDRESS_ID.toString();
+	public static final String PHYSICIAN_USERNAME = OfficesEnum.PHYSICIAN_USERNAME.toString();
+	public static final String PHONE_NUMBER = OfficesEnum.PHONE_NUMBER.toString();
+	
+	public OfficesTable(){
+		super();
+		this.setTableName(TABLE_NAME);
+	}			
+	public OfficesTable addOfficeId(String newId){		
+		this.addNumAttr(OFFICE_ID, newId);
+		return this;
+	}
+}

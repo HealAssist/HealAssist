@@ -1,0 +1,33 @@
+package database.access.tableobject;
+
+public class PhysicianInfoTable extends DatabaseTable {			
+	public PhysicianInfoTable(){
+		super();
+		this.setTableName(PhysicianInfoEnum.TABLE_NAME.toString());
+	}	
+		
+	public PhysicianInfoTable addUsername(String newUsername){		
+		this.addStrAttr(PhysicianInfoEnum.USERNAME.toString(), newUsername);
+		return this;
+	}
+	public PhysicianInfoTable addPassword(String newUserPassword){				
+		this.addStrAttr(PhysicianInfoEnum.PASSWORD.toString(), newUserPassword);
+		return this;
+	}	
+	public PhysicianInfoTable addFirstName(String newFirstName){		
+		this.addStrAttr(PhysicianInfoEnum.FIRSTNAME.toString(), newFirstName);
+		return this;
+	}
+	public PhysicianInfoTable addMiddleName(String newMiddleName){		
+		this.addStrAttr(PhysicianInfoEnum.MIDDLENAME.toString(), newMiddleName);
+		return this;
+	}
+	public PhysicianInfoTable addLastName(String newLastName){		
+		this.addStrAttr(PhysicianInfoEnum.LASTNAME.toString(), newLastName);
+		return this;
+	}	
+	public PhysicianInfoTable addEmail(String newEmail){		
+		this.addStrAttr(PhysicianInfoEnum.EMAIL.toString(), newEmail);
+		return this;
+	}	
+}

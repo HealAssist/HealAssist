@@ -1,0 +1,10 @@
+package healassist.client.service.misc;
+
+import database.access.facade.BusinessLogic;
+import database.access.facade.IBusinessLogic;
+
+public class GlobalConstant {
+	public static final IBusinessLogic BusinessLogic = new BusinessLogic();
+	
+	public static final String PROJECT_NAME = "healassist.client.service";
+}

@@ -1,0 +1,27 @@
+package database.access.tableobject;
+
+public class PhysicianInfoTuple extends DatabaseTable {			
+	public PhysicianInfoTuple(){
+		super();
+		this.setTableName(PhysicianInfoEnum.TABLE_NAME.toString());
+	}	
+		
+	public void addUsername(String newUsername){		
+		this.addStrAttr(PhysicianInfoEnum.USERNAME.toString(), newUsername);		
+	}
+	public void addPassword(String newUserPassword){				
+		this.addStrAttr(PhysicianInfoEnum.PASSWORD.toString(), newUserPassword);
+	}	
+	public void addFirstName(String newFirstName){		
+		this.addStrAttr(PhysicianInfoEnum.FIRSTNAME.toString(), newFirstName);
+	}
+	public void addMiddleName(String newMiddleName){		
+		this.addStrAttr(PhysicianInfoEnum.MIDDLENAME.toString(), newMiddleName);
+	}
+	public void addLastName(String newLastName){		
+		this.addStrAttr(PhysicianInfoEnum.LASTNAME.toString(), newLastName);
+	}	
+	public void addEmail(String newEmail){		
+		this.addStrAttr(PhysicianInfoEnum.EMAIL.toString(), newEmail);
+	}	
+}

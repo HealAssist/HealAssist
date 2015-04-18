@@ -1,0 +1,21 @@
+package database.access.tableobject;
+
+public class PhyPatientsTable extends DatabaseTable{		
+		public static final String TABLE_NAME = PatientInfoEnum.TABLE_NAME.toString();
+		public static final String PHYSICIAN_USERNAME = PatientInfoEnum.PHYSICIAN_USERNAME.toString();
+		public static final String PATIENT_CHART_ID = PatientInfoEnum.PATIENT_CHART_ID.toString();
+		
+		public PhyPatientsTable(){
+			super();
+			this.setTableName(TABLE_NAME);
+		}	
+			
+		public PhyPatientsTable addChartId(String newChartId){		
+			this.addStrAttr(CHART_ID, newChartId);
+			return this;
+		}
+		public PhyPatientsTable addAddressId(String newAddressId){				
+			this.addStrAttr(ADDRESS_ID, newAddressId);
+			return this;
+		}	
+}

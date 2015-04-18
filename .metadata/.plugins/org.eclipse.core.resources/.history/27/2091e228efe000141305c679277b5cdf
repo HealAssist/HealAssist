@@ -1,0 +1,26 @@
+package database.access.tableobject;
+
+public enum PatDemographicsEnum {
+	TABLE_NAME("PAT_DEMOGRAPHICS"),
+	CHART_ID("PAT_CHART_ID"),
+	PATIENT_TITLE("PAT_TITLE"),
+	FIRSTNAME("PAT_FNAME"),
+	MIDDLENAME("PAT_MNAME"),
+	LASTNAME("PAT_LNAME"),
+	NAME_SUFFIX("PAT_SUFFIX"),
+	CHART_PHOTO("PAT_CHART_PHOTO"),
+	PRIMARY_PHONE("PAT_PRIMARY_PHONE"),
+	SECONDARY_PHONE("PAT_SECONDARY_PHONE"),
+	SMS_STATUS("PAT_SMS_MESSAGING"),
+	WORK_PHONE("PAT_WORK_PHONE"),
+	WORK_PHONE_EXTENSION("PAT_WORK_PHONE_EXT"),
+	;			
+	public String toString(){
+		return this.stringRepresentation;
+	}	
+	PatDemographicsEnum(String newStringRepresentation){
+		this.stringRepresentation = newStringRepresentation;
+	}
+	
+	private String stringRepresentation;
+}

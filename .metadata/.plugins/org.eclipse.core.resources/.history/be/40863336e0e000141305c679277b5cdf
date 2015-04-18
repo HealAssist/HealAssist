@@ -1,0 +1,12 @@
+package database.access.facade;
+
+import database.access.tableobject.PhysicianInfoTable;
+
+public interface IBusinessLogic {
+	//Physician options
+	public Boolean authenticate(PhysicianInfoTable physUser);
+	public Boolean register(PhysicianInfoTable physician);
+	//Patient options
+	//public Boolean authenticate(PatientInfoTable patUser);
+	
+}

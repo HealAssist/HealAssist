@@ -1,0 +1,5 @@
+package healassist.entity;
+
+public class Physician {
+
+}

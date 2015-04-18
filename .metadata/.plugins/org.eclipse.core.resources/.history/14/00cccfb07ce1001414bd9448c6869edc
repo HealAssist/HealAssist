@@ -1,0 +1,48 @@
+package database.access.facade;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import database.access.query.QueryHandler;
+import database.access.tableobject.PatientInfoTable;
+import database.access.tableobject.PhysicianInfoTable;
+
+public class SQLBusinessLogic implements IBusinessLogic{
+	@Override
+	public Boolean authenticate(PhysicianInfoTable physUser){
+		try( 	Connection conn = DatabaseConnection.getConnection(); 
+				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM " + physUser.getTableName() +
+					" WHERE " + physUser.getRelation(PhysicianInfoTable.USERNAME) + " AND " + 
+					physUser.getRelation(PhysicianInfoTable.PASSWORD));
+				ResultSet results = stmt.executeQuery();
+			){																																						
+			
+			if(!results.next()){ //Check if row returned 
+				return false;
+			}else{											
+				return true;
+			}						
+		}catch(Exception e){
+			System.err.println(e);
+			return null;
+		}
+	}
+	public Boolean register(PhysicianInfoTable physUser){
+		try( 	Connection conn = DatabaseConnection.getConnection(); 
+				PreparedStatement stmt = conn.prepareStatement(QueryHandler.constructInsert(physUser));				
+			){																																						
+			stmt.executeUpdate();														
+			return true;									
+		}catch(Exception e){
+			System.err.println(e);
+			return false;
+		}
+	}
+	@Override
+	public Boolean register(PatientInfoTable patient) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

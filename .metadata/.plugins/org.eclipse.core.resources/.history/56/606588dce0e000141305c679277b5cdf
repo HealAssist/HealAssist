@@ -1,0 +1,20 @@
+package database.access.tableobject;
+
+public enum PatientInfoEnum {	
+	
+	TABLE_NAME("PATIENT_INFO"),
+		
+	;		
+	
+	public String toString(){
+		return this.stringRepresentation;
+	}
+	
+	PatientInfoEnum(String newStringRepresentation){
+		this.stringRepresentation = newStringRepresentation;
+	}
+	
+	private String stringRepresentation;	
+	
+
+}

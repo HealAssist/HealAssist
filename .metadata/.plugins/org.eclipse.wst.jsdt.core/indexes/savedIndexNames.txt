@@ -4,5 +4,4 @@ INDEX VERSION 1.3+C:\1-dev\1-ver-con\git-hub\HealAssist\.metadata\.plugins\org.e
 3307413169.index
 1215928496.index
 3831996372.index
-2318457807.index
 734146926.index

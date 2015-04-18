@@ -1,0 +1,9 @@
+package database.access.facade;
+
+import database.access.tableobject.PhysicianInfoTable;
+
+public abstract class  IBusinessLogic {
+	public static abstract Boolean authenticate(PhysicianInfoTable physUser){
+		
+	}
+}

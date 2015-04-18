@@ -1,0 +1,12 @@
+package healassist.client.service.misc;
+
+import database.access.facade.SQLBusinessLogic;
+import database.access.facade.IBusinessLogic;
+
+public class GlobalConstant {
+	public static final IBusinessLogic BusinessLogic = new SQLBusinessLogic();
+	
+	public static final String PROJECT_NAME = "healassist.client.service";
+	public static final String REFINE_NEEDED = "!!! Ambiguous : Refine Service !!!";
+	public static final String IMPLEMENTATION_NEEDED = "!!! NOT YET IMPLEMENTED !!!";
+}

@@ -1,0 +1,16 @@
+package database.access.facade;
+
+import java.util.HashMap;
+
+public abstract class QueryObject {
+	private HashMap<String, String> queryPairs;
+		
+	public QueryObject(){ 
+		this.queryPairs = new HashMap<String, String>();
+	}
+	
+	protected Boolean initQuery(){
+		
+	}
+	
+}

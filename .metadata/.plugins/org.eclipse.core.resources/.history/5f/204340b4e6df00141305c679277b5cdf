@@ -1,0 +1,5 @@
+package healassist.client.service.misc;
+
+public class GlobalConstant {
+
+}

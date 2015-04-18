@@ -1,0 +1,11 @@
+127.0.0.1 - - [14/Apr/2015:18:53:28 -0500] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [14/Apr/2015:18:53:30 -0500] "GET /healassist.client.service/ HTTP/1.1" 404 967
+127.0.0.1 - - [14/Apr/2015:18:54:04 -0500] "GET /healassist.client.service/authenticate/physician?username=jennifer1&password=jennifer HTTP/1.1" 200 22
+127.0.0.1 - - [14/Apr/2015:18:54:09 -0500] "GET /healassist.client.service/authenticate/physician?username=jennifer1&password=jennifer1 HTTP/1.1" 200 41
+127.0.0.1 - - [14/Apr/2015:18:55:47 -0500] "GET /healassist.client.service/register-user?username=jacoby1&password=jacoby1&firstname=Jacob&middlename=Y&lastname=Gifford&email=jacoby@yahoo.com HTTP/1.1" 404 967
+127.0.0.1 - - [14/Apr/2015:18:55:56 -0500] "GET /healassist.client.service/register-user/physician?username=jacoby1&password=jacoby1&firstname=Jacob&middlename=Y&lastname=Gifford&email=jacoby@yahoo.com HTTP/1.1" 200 21
+127.0.0.1 - - [14/Apr/2015:20:42:22 -0500] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [14/Apr/2015:20:42:24 -0500] "GET /healassist.client.service/ HTTP/1.1" 404 967
+127.0.0.1 - - [14/Apr/2015:20:42:51 -0500] "GET /healassist.client.service/authenticate/physician?username=jennifer1&password=jennifer HTTP/1.1" 200 22
+127.0.0.1 - - [14/Apr/2015:20:43:00 -0500] "GET /healassist.client.service/authenticate/physician?username=jennifer1&password=jennifer1 HTTP/1.1" 200 41
+127.0.0.1 - - [14/Apr/2015:20:43:58 -0500] "GET /healassist.client.service/register-user/physician?username=jennifer1&password=jennifer1&firstname=Jennifer&middlename=J&lastname=Peols&email=jennyp@email.com HTTP/1.1" 200 67

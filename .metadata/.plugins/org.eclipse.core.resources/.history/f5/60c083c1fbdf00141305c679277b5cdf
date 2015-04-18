@@ -1,0 +1,6 @@
+package database.access.misc;
+
+public class QueryConstant {
+	public static final String ALL = "*";
+	public static final String SELECT = "SELECT";
+}

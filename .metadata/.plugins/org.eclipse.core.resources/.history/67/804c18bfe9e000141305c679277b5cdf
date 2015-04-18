@@ -1,0 +1,19 @@
+package database.access.tableobject;
+
+public class PatEmergencyContactsTable extends DatabaseTable{
+	public static final String TABLE_NAME = PatMedicationsEnum.TABLE_NAME.toString();
+	public static final String PATIENT_MED_ID = PatMedicationsEnum.PATIENT_MED_ID.toString();
+	public static final String PATIENT_CHART_ID = PatMedicationsEnum.PATIENT_CHART_ID.toString();
+	public static final String MEDICATION_NAME = PatMedicationsEnum.MEDICATION_NAME.toString();
+	public static final String MEDICATION_DOSAGE_QTTY = PatMedicationsEnum.MEDICATION_DOSAGE_QTTY.toString();
+	public static final String MEDICATION_DOSAGE_ROUTE = PatMedicationsEnum.MEDICATION_DOSAGE_ROUTE.toString();	
+	
+	public PatEmergencyContactsTable(){
+		super();
+		this.setTableName(TABLE_NAME);
+	}			
+	public PatEmergencyContactsTable addPatientMedicalId(String newPatMedId){		
+		this.addNumAttr(PATIENT_MED_ID, newPatMedId);
+		return this;
+	}
+}

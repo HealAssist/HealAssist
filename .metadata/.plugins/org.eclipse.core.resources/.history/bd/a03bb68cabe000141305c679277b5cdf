@@ -1,0 +1,37 @@
+package database.access.facade;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Arrays;
+
+import database.access.query.QueryConstant;
+import database.access.query.SelectQuery;
+import database.access.tableobject.PhysicianInfoTable;
+
+public class BusinessLogic implements IBusinessLogic{
+	public Boolean authenticateUser(PhysicianInfoTable physUser){
+		try( Connection conn = DatabaseConnection.getConnection(); ){												
+			SelectQuery sql = new SelectQuery();
+									
+			String sql = "SELECT " + QueryConstant.ALL + " FROM " + physUser.getTableName() +
+					" WHERE " + 
+			
+			PreparedStatement stmt = conn.prepareStatement(sql);						
+			ResultSet results = stmt.executeQuery();
+			
+			if(!results.next()){
+				//No results --> failed auth
+				return false;
+			}else{
+				//Successful authentication
+				return true;
+			}
+			
+			
+		}catch(Exception e){
+			System.err.println(e);
+			return null;
+		}
+	}
+}

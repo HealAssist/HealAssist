@@ -1,0 +1,32 @@
+package database.access.facade;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Arrays;
+
+import database.access.query.QueryConstant;
+import database.access.query.SelectQuery;
+import database.access.tableobject.PhysicianInfoTable;
+
+public class BusinessLogic implements IBusinessLogic{
+	@Override
+	public Boolean authenticate(PhysicianInfoTable physUser){
+		try( 	Connection conn = DatabaseConnection.getConnection(); 
+				PreparedStatement stmt = conn.prepareStatement("SELECT " + QueryConstant.ALL + " FROM " + physUser.getTableName() +
+					" WHERE " + physUser.getRelation(PhysicianInfoTable.USERNAME) + " AND " + 
+					physUser.getRelation(PhysicianInfoTable.PASSWORD));
+				ResultSet results = stmt.executeQuery();
+			){																																						
+			
+			if(!results.next()){
+				return false;
+			}else{				
+				return true;
+			}						
+		}catch(Exception e){
+			System.err.println(e);
+			return null;
+		}
+	}	
+}

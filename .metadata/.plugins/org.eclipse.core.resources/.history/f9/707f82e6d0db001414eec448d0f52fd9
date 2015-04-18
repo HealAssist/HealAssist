@@ -1,5 +1,0 @@
-package healassist.service.response;
-
-public class JsonHelper {
-
-}

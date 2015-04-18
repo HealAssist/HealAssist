@@ -1,0 +1,24 @@
+package database.access.tableobject;
+
+public class PatAppointmentsTable extends DatabaseTable {
+	public static final String TABLE_NAME = PatAppointmentsEnum.TABLE_NAME.toString();
+	public static final String APPT_ID = PatAppointmentsEnum.APPT_ID.toString();
+	public static final String PATIENT_CHART_ID = PatAppointmentsEnum.PATIENT_CHART_ID.toString();
+	public static final String DATE = PatAppointmentsEnum.DATE.toString();
+	public static final String TIME = PatAppointmentsEnum.TIME.toString();
+	public static final String REASON = PatAppointmentsEnum.REASON.toString();
+	public static final String NOTES = PatAppointmentsEnum.NOTES.toString();
+	
+	public PatAppointmentsTable(){
+		super();
+		this.setTableName(TABLE_NAME);
+	}			
+	public PatAppointmentsTable addEmergencyContactId(String newId){		
+		this.addNumAttr(ID, newId);
+		return this;
+	}
+	public PatAppointmentsTable addContactFirstName(String newFirstName){		
+		this.addStrAttr(FIRSTNAME, newFirstName);
+		return this;
+	}
+}

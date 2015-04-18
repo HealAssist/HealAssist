@@ -1,0 +1,9 @@
+package database.access.query;
+
+public class SelectQuery extends QueryObject {	
+	public SelectQuery(){
+		super();
+	}
+
+	
+}

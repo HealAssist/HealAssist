@@ -11,3 +11,12 @@
 1428258711900	Rename type 'UserInfoTable'
 1428279028947	Rename type 'UserInfoTuple'
 1428279110989	Rename type 'UserInfoTableEnum'
+1428708677964	Delete element
+1428712987387	Rename type 'QueryBuilder'
+1428716862732	Delete element
+1428717388455	Rename type 'PhysicianInfoTableEnum'
+1428721281912	Rename type 'PhysicianInfoTuple'
+1428722732790	Rename type 'Query'
+1428723310458	Rename package 'database.access.misc'
+1428723330696	Copy compilation units
+1428723340186	Delete elements

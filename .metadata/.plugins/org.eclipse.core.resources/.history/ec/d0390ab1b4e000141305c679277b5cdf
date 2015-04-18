@@ -1,0 +1,64 @@
+package database.access.tableobject;
+
+import java.util.HashMap;
+
+public class DatabaseTable {
+	private String tableName;
+	private HashMap<String, String> attributeList;	
+	
+	public DatabaseTable(){
+		this.tableName = "";
+		this.attributeList = new HashMap<String, String>();
+	}
+	public HashMap<String, String> getAttributeMap(){
+		return this.attributeList;
+	}
+	public String relateColumn(String columnName){
+		if(!this.attributeList.containsKey(columnName)){
+			return null;
+		}else{
+			return columnName + " = " + this.attributeList.get(columnName);	
+		}		
+	}
+	public String[] getColumnNames(){
+		return this.attributeList.keySet().toArray(new String[0]);
+	}
+	private void addAttribute(String attrKey, String attrValue){
+		this.attributeList.put(attrKey, attrValue);
+	}
+	
+	public String getTableName(){
+		return this.tableName;
+	}
+	protected void setTableName(String newTableName){
+		this.tableName = newTableName;
+	}
+
+	protected void addStrAttr(String attrName, String attrValue){
+		String formStrAttr = this.formatStringAttr(attrValue);
+		this.addAttribute(attrName, formStrAttr);		
+	}
+	protected void addNumAttr(String attrName, String attrValue){
+		this.addAttribute(attrName, attrValue);
+	}
+	protected void addCharAttr(String attrName, String attrValue){
+		String formCharAttr = this.formatCharAttr(attrValue);
+		this.addAttribute(attrName, formCharAttr);
+	}
+	
+	private String formatStringAttr(String attrValue){
+		return "'" + attrValue + "'";
+	}
+	private String formatCharAttr(String attrValue){
+		return "'" + attrValue + "'";
+	}
+	
+	public Boolean hasAttributes(){
+		if( this.attributeList.size() <= 0 ){
+			return false;
+		}else{
+			return true;
+		}
+	}
+	
+}

@@ -1,0 +1,45 @@
+package database.access.tableobject;
+
+public class PatDemographicsTable extends DatabaseTable{		
+			
+	SMOKING_STATUS("PAT_SMOKER_STATUS")
+	
+	public static final String TABLE_NAME = PatDemographicsEnum.TABLE_NAME.toString();
+	public static final String CHART_ID = PatDemographicsEnum.CHART_ID.toString();
+	public static final String PATIENT_TITLE = PatDemographicsEnum.PATIENT_TITLE.toString();
+	public static final String FIRSTNAME = PatDemographicsEnum.FIRSTNAME.toString();
+	public static final String MIDDLENAME = PatDemographicsEnum.MIDDLENAME.toString();
+	public static final String LASTNAME = PatDemographicsEnum.LASTNAME.toString();
+	public static final String NAME_SUFFIX = PatDemographicsEnum.NAME_SUFFIX.toString();
+	public static final String CHART_PHOTO = PatDemographicsEnum.CHART_PHOTO.toString();
+	public static final String PRIMARY_PHONE = PatDemographicsEnum.PRIMARY_PHONE.toString();
+	public static final String SECONDARY_PHONE = PatDemographicsEnum.SECONDARY_PHONE.toString();
+	public static final String SMS_STATUS = PatDemographicsEnum.SMS_STATUS.toString();
+	public static final String WORK_PHONE = PatDemographicsEnum.WORK_PHONE.toString();
+	public static final String WORK_PHONE_EXTENSION = PatDemographicsEnum.WORK_PHONE_EXTENSION.toString();
+	public static final String PRIMARY_EMAIL = PatDemographicsEnum.PRIMARY_EMAIL.toString();
+	public static final String ALTERNATE_EMAIL = PatDemographicsEnum.ALTERNATE_EMAIL.toString();
+	public static final String PREFERRED_COMMUNICATION = PatDemographicsEnum.PREFERRED_COMMUNICATION.toString();
+	public static final String REMINDER_LANGUAGE = PatDemographicsEnum.REMINDER_LANGUAGE.toString();
+	public static final String MEDICAL_HISTORY_CONSENT_STATUS = PatDemographicsEnum.MEDICAL_HISTORY_CONSENT_STATUS.toString();
+	public static final String SSN = PatDemographicsEnum.SSN.toString();
+	public static final String DATE_OF_BIRTH = PatDemographicsEnum.DATE_OF_BIRTH.toString();
+	public static final String GENDER = PatDemographicsEnum.GENDER.toString();
+	public static final String RACE = PatDemographicsEnum.RACE.toString();
+	public static final String ETHNICITY = PatDemographicsEnum.ETHNICITY.toString();
+	public static final String PREFERRED_LANGUAGE = PatDemographicsEnum.PREFERRED_LANGUAGE.toString();
+	public static final String STUDENT_STATUS = PatDemographicsEnum.STUDENT_STATUS.toString();
+	public static final String ORIGINATING_COUNTRY = PatDemographicsEnum.ORIGINATING_COUNTRY.toString();
+	public static final String MERITAL_STATUS = PatDemographicsEnum.MERITAL_STATUS.toString();
+	public static final String PREGNANCY_STATE = PatDemographicsEnum.PREGNANCY_STATE.toString();
+	public static final String SMOKING_STATUS = PatDemographicsEnum.SMOKING_STATUS.toString();
+	
+	public PatDemographicsTable(){
+		super();
+		this.setTableName(TABLE_NAME);
+	}			
+	public PatDemographicsTable addEmergencyContactId(String newId){		
+		this.addNumAttr(ID, newId);
+		return this;
+	}
+}

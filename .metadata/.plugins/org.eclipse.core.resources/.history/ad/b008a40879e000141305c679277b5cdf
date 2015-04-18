@@ -1,0 +1,28 @@
+package database.access.query;
+
+import java.util.Arrays;
+
+import database.access.tableobject.DatabaseTable;
+
+public class SelectQuery extends QueryObject {		
+	private SelectClause selectClause;
+	private FromClause fromClause;
+	private WhereClause whereClause;
+	
+	public SelectQuery(){ 
+		super();		
+		init();
+	}		
+	
+	public void select(String selectClause){
+		selectClause.s
+	}
+	public void select(String...columns){
+		
+	}
+	
+	private void init(){
+		this.setQueryStr("SELECT ");
+	}
+		
+}

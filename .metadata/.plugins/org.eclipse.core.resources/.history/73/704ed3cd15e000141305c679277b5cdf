@@ -1,0 +1,45 @@
+package com.healassist.server.healassist.client.service;
+
+import healassist.client.service.misc.GlobalConstant;
+import healassist.service.response.JsonFeedbackResponse;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+
+import database.access.facade.BusinessLogic;
+import database.access.facade.DatabaseInterface;
+import database.access.tableobject.PhysicianInfoTable;
+
+@Path("authenticate")
+public class Authenticate {
+	private static final String CLASS_NAME = "Authenticate";
+	
+	private static final String AUTH_PHYSICIAN = "AuthenticatePhysician";
+	@GET
+	@Path("/physician")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String AuthenticatePhysician(@QueryParam("username") String username, 
+			@QueryParam("password") String password){
+		try{			
+			PhysicianInfoTable physician = new PhysicianInfoTable();
+			DatabaseInterface db = new DatabaseInterface();
+			
+			physician.addUsername(username);
+			physician.addPassword(password);			
+			
+			if( !BusinessLogic.authenticateUser(physician) ){
+				return JsonFeedbackResponse.failure();
+			}else{
+				return JsonFeedbackResponse.success();
+			}		
+			
+		}catch(Exception e){
+			System.err.println(e);
+			return JsonFeedbackResponse.error(GlobalConstant.PROJECT_NAME, CLASS_NAME, AUTH_PHYSICIAN, 
+					"Try Failure" );
+		}		
+	}
+}

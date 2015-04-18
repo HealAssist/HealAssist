@@ -1,0 +1,53 @@
+package com.healassist.server.healassist.client.service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import healassist.client.service.misc.GlobalConstant;
+import healassist.service.response.JsonFeedbackResponse;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+
+import database.access.facade.DatabaseConnection;
+import database.access.facade.DatabaseInterface;
+import database.access.tableobject.PhysicianInfoTableEnum;
+import database.access.tableobject.PhysicianInfoTuple;
+
+@Path("authenticate")
+public class Authenticate {
+	private static final String CLASS_NAME = "Authenticate";
+	
+	private static final String AUTH_PHYSICIAN = "AuthenticatePhysician";
+	@GET
+	@Path("/physician")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String AuthenticatePhysician(@QueryParam("username") String username, 
+			@QueryParam("password") String password){
+		try(ResultSet results = null;){
+			
+			PhysicianInfoTuple physician = new PhysicianInfoTuple();
+			DatabaseInterface db = new DatabaseInterface();
+			
+			physician.addUsername(username);
+			physician.addPassword(password);															
+			
+			results = db.select(physician);
+			
+			if( !results.next() ){
+				return JsonFeedbackResponse.failure();
+			}else{
+				return JsonFeedbackResponse.success();
+			}						
+		}catch(Exception e){
+			System.err.println(e);
+			return JsonFeedbackResponse.error(GlobalConstant.PROJECT_NAME, CLASS_NAME, AUTH_PHYSICIAN, 
+					"Try Failure" );
+		}		
+	}
+}

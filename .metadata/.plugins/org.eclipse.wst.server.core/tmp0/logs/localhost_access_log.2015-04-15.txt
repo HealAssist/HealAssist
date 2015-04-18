@@ -1,0 +1,7 @@
+127.0.0.1 - - [15/Apr/2015:12:23:58 -0500] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [15/Apr/2015:12:24:00 -0500] "GET /healassist.client.service/ HTTP/1.1" 404 967
+127.0.0.1 - - [15/Apr/2015:12:42:52 -0500] "GET /healassist.client.service/authenticate/physician?username=jennifer1&password=jennifer HTTP/1.1" 200 22
+127.0.0.1 - - [15/Apr/2015:12:42:56 -0500] "GET /healassist.client.service/authenticate/physician?username=jennifer1&password=jennifer1 HTTP/1.1" 200 41
+127.0.0.1 - - [15/Apr/2015:12:49:26 -0500] "GET /healassist.client.service/register-user/physician?username=barath&password=barath&firstname=Baratch&middlename=T&lastname=Barath&email=barath@umkc.edu HTTP/1.1" 200 21
+127.0.0.1 - - [15/Apr/2015:12:50:13 -0500] "GET /healassist.client.service/authenticate/physician?username=barath&password=barath HTTP/1.1" 200 38
+127.0.0.1 - - [15/Apr/2015:12:50:30 -0500] "GET /healassist.client.service/authenticate/physician?username=barath&password=barath1 HTTP/1.1" 200 22

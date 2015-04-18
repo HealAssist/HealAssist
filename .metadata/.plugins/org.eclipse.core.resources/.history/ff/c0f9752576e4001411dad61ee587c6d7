@@ -1,0 +1,5 @@
+package com.healassist.server.healassist.client.service;
+
+public class Physician {
+
+}

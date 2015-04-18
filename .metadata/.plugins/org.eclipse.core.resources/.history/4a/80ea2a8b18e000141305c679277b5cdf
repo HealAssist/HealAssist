@@ -1,0 +1,37 @@
+package database.access.query;
+
+import java.util.Arrays;
+
+import database.access.tableobject.DatabaseTable;
+
+public class SelectQuery extends QueryObject {		
+	
+	public SelectQuery(){ 
+		super();		
+	}
+	public SelectQuery(DatabaseTable table){
+		super();	
+		
+	}				
+	
+	public void select(String...columns){
+		if(columns.length <= 0){
+			this.addQueryPair(QueryConstant.SELECT, QueryConstant.ALL);			
+		}else{
+			String cols = columns[0];
+			
+			for(String column : Arrays.copyOfRange(columns, 1, columns.length)){
+				cols += ", " + column;
+			}			
+			this.addQueryPair(QueryConstant.SELECT, cols);
+		}
+	}
+	
+	public void from(String tableName){
+		this.addQueryPair(QueryConstant.FROM, tableName);
+	}
+	
+	public void where(){
+		
+	}
+}

@@ -1,0 +1,17 @@
+package database.access.query;
+
+import java.util.HashMap;
+
+public abstract class QueryObject {
+	private HashMap<String, String> queryPairs;
+	private String queryString;
+	
+	public QueryObject(){ 
+		this.queryPairs = new HashMap<String, String>();
+	}
+	
+	protected Boolean initQuery(){
+		
+	}
+	
+}

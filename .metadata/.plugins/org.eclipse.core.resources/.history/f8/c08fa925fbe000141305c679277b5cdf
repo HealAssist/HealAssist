@@ -1,0 +1,14 @@
+package database.access.tableobject;
+
+public class MedicalSpecialtiesTable extends DatabaseTable {
+	public static final String TABLE_NAME = MedicalSpecialtiesEnum.TABLE_NAME.toString();
+	
+	public MedicalSpecialtiesTable(){
+		super();
+		this.setTableName(TABLE_NAME);
+	}			
+	public MedicalSpecialtiesTable addOfficeId(String newId){		
+		this.addNumAttr(OFFICE_ID, newId);
+		return this;
+	}
+}
