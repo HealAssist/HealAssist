@@ -1,6 +1,0 @@
-package database.access.tableobject;
-
-public interface DBTableEnumInterface {
-	public String();
-	public String tableName();
-}

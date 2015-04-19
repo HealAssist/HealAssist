@@ -1,8 +1,0 @@
-package database.access.facade;
-
-import database.access.query.QueryConstant;
-
-public class SelectQuery extends QueryObject {	
-	public QueryObject(){		
-	}
-}

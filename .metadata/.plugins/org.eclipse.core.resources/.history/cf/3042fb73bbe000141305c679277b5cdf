@@ -1,5 +1,0 @@
-package healassist.client.service.misc;
-
-public class GlobalConstant {
-	public static final String PROJECT_NAME = "healassist.client.service";
-}

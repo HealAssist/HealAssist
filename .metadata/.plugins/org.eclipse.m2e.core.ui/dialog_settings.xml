@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<section name="org.eclipse.m2e.core.ui.internal.dialogs.EditDependencyDialog">
-		<item value="450" key="height"/>
-		<item value="480" key="width"/>
-		<item value="64" key="y"/>
-		<item value="443" key="x"/>
-	</section>
 	<section name="MavenProjectWizardArchetypePage">
 		<item value="All Catalogs" key="catalog"/>
 		<list key="projectNameTemplate">
@@ -15,6 +9,12 @@
 			<item value="[groupId].[artifactId]"/>
 			<item value="[groupId].[artifactId]-[version]"/>
 		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.EditDependencyDialog">
+		<item value="450" key="height"/>
+		<item value="480" key="width"/>
+		<item value="64" key="y"/>
+		<item value="443" key="x"/>
 	</section>
 	<section name="org.eclipse.m2e.core.pom.overview">
 		<list key="issueManagementUrl">
@@ -42,6 +42,12 @@
 			<item value=""/>
 		</list>
 	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item value="450" key="height"/>
+		<item value="480" key="width"/>
+		<item value="64" key="y"/>
+		<item value="443" key="x"/>
+	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
 		</list>
@@ -52,12 +58,6 @@
 			<item value="[groupId].[artifactId]"/>
 			<item value="[groupId].[artifactId]-[version]"/>
 		</list>
-	</section>
-	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
-		<item value="450" key="height"/>
-		<item value="480" key="width"/>
-		<item value="64" key="y"/>
-		<item value="443" key="x"/>
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="groupId">
