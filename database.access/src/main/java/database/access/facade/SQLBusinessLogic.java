@@ -5,17 +5,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import database.access.query.QueryHandler;
+import database.access.tableobject.DatabaseTable;
 import database.access.tableobject.PatientInfoTable;
 import database.access.tableobject.PhysicianInfoTable;
 
 public class SQLBusinessLogic implements IBusinessLogic{
 	@Override
 	public Boolean authenticate(PhysicianInfoTable physician){
-		try( 	Connection conn = DatabaseConnection.getConnection(); 
-				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM " + physician.getTableName() +
-					" WHERE " + physician.getRelation(PhysicianInfoTable.USERNAME) + " AND " + 
-					physician.getRelation(PhysicianInfoTable.PASSWORD));
-				ResultSet results = stmt.executeQuery();
+		try( Connection conn = DatabaseConnection.getConnection(); 
+			 PreparedStatement stmt = conn.prepareStatement("SELECT * FROM " + physician.getTableName() +
+				" WHERE " + physician.getRelation(PhysicianInfoTable.USERNAME) + " AND " + 
+				physician.getRelation(PhysicianInfoTable.PASSWORD));
+			 ResultSet results = stmt.executeQuery(); 
 			){																																						
 			
 			if(!results.next()){ //Check if row returned 
@@ -24,13 +25,14 @@ public class SQLBusinessLogic implements IBusinessLogic{
 				return true;
 			}						
 		}catch(Exception e){
-			System.err.println(e);
-			return null;
+			System.err.println(e);			
 		}
+		return null;
 	}
-	public Boolean register(PhysicianInfoTable physician){
+	
+	public Boolean create(DatabaseTable entry){
 		try( 	Connection conn = DatabaseConnection.getConnection(); 
-				PreparedStatement stmt = conn.prepareStatement(QueryHandler.constructInsert(physician));				
+				PreparedStatement stmt = conn.prepareStatement(QueryHandler.constructInsert(entry));				
 			){																																						
 			stmt.executeUpdate();														
 			return true;									
@@ -39,16 +41,41 @@ public class SQLBusinessLogic implements IBusinessLogic{
 			return false;
 		}
 	}
-	public Boolean register(PatientInfoTable patient){
-		try( 	Connection conn = DatabaseConnection.getConnection(); 
-				PreparedStatement stmt = conn.prepareStatement(QueryHandler.constructInsert(patient));				
-			){																																						
-			stmt.executeUpdate();														
-			return true;									
+	
+	public ResultSet read(DatabaseTable entry){
+		try( Connection conn = DatabaseConnection.getConnection(); 
+			 PreparedStatement stmt = conn.prepareStatement(QueryHandler.constructSelectAll(entry));
+			 ResultSet results = stmt.executeQuery();){
+			
+			
 		}catch(Exception e){
-			System.err.println(e);
-			return false;
+			e.printStackTrace();
 		}
+		return null;
 	}
+	
+//	*** While testing whether generic table operations are possible, comment out
+//	public Boolean create(PhysicianInfoTable physician){
+//		try( 	Connection conn = DatabaseConnection.getConnection(); 
+//				PreparedStatement stmt = conn.prepareStatement(QueryHandler.constructInsert(physician));				
+//			){																																						
+//			stmt.executeUpdate();														
+//			return true;									
+//		}catch(Exception e){
+//			System.err.println(e);
+//			return false;
+//		}
+//	}
+//	public Boolean create(PatientInfoTable patient){
+//		try( 	Connection conn = DatabaseConnection.getConnection(); 
+//				PreparedStatement stmt = conn.prepareStatement(QueryHandler.constructInsert(patient));				
+//			){																																						
+//			stmt.executeUpdate();														
+//			return true;									
+//		}catch(Exception e){
+//			System.err.println(e);
+//			return false;
+//		}
+//	}
 
 }

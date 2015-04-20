@@ -32,7 +32,16 @@ public class QueryHandler {
 			return null;
 		}
 	}
-
+	public static String constructSelectAll(DatabaseTable table){
+		try{
+			String tableName = table.getTableName();																
+			return "SELECT * FROM " + tableName;			
+		}catch(Exception e){
+			System.err.println(e.toString());
+			return null;
+		}		
+	}
+	
 	public static String constructSelect(DatabaseTable table, String[] columns){
 		try{
 			String tableName = table.getTableName();				
